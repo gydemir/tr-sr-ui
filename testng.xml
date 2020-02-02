@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite" parallel="tests">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+    <test name="com.LoginTestChrome" parallel="classes" thread-count="1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="com.LoginTestFirefox" parallel="classes" thread-count="1">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.LoginTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="com.BoutiqueImagesTestChrome" parallel="classes" thread-count="1">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="tests.BoutiqueImagesTest">
+                <methods>
+                    <include name="imageTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="com.BoutiqueImagesTestFirefox" parallel="classes" thread-count="1">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.BoutiqueImagesTest">
+                <methods>
+                    <include name="imageTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="com.BoutiqueLinksTestChrome" parallel="classes" thread-count="1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.BoutiqueLinksTest">
+                <methods>
+                    <include name="linkTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="com.BoutiqueLinksTestFirefox" parallel="classes" thread-count="1">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.BoutiqueLinksTest">
+                <methods>
+                    <include name="linkTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
