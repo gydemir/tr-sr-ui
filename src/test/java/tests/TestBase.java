@@ -14,9 +14,11 @@ public class TestBase {
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
     public CapabilityFactory capabilityFactory = new CapabilityFactory();
 
+
     @Parameters({ "browser" })
     @BeforeMethod
     public void setup(String browser) throws MalformedURLException {
+        System.setProperty("java.net.preferIPv4Stack" , "true");
         driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilityFactory.getCapabilities(browser)));
     }
 

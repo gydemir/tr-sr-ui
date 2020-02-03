@@ -33,7 +33,7 @@ public class LoginTest extends TestBase {
     public void login(String dataUsername, String dataPassword, Boolean state, Object displayItem) {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.navigateHomePage();
-//        wait = new WebDriverWait(driver.get(), 5);
+        // wait = new WebDriverWait(driver.get(), 5);
         loginPage.click(Var.loginButton);
         loginPage.isElementDisplayed(Var.loginDialog);
         loginPage.enterTheInput(Var.emailInputArea, dataUsername);
@@ -45,7 +45,6 @@ public class LoginTest extends TestBase {
         else {
             loginPage.isTextDisplayed(Var.errorBox, (String) displayItem);
         }
-
     }
 
     @AfterMethod(alwaysRun = true)

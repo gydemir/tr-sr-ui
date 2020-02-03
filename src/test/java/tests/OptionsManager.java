@@ -10,6 +10,7 @@ public class OptionsManager {
     //Get Chrome Options
     public static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("incognito");
         options.addArguments("--start-maximized");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-popup-blocking");
@@ -21,6 +22,9 @@ public class OptionsManager {
     public static FirefoxOptions getFirefoxOptions () {
         FirefoxOptions options = new FirefoxOptions();
         FirefoxProfile profile = new FirefoxProfile();
+
+        profile.setPreference("browser.private.browsing.autostart", true);
+
         //Accept Untrusted Certificates
         profile.setAcceptUntrustedCertificates(true);
         profile.setAssumeUntrustedCertificateIssuer(false);
